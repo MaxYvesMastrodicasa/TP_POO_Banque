@@ -28,8 +28,8 @@ public abstract class Compte {
     public void retirer(double montant) {
         if (montant <= solde) {
             solde -= montant;
-            ajouterTransaction(new Transaction("Retrait", montant, new Date(), "Retrait d'argent"));
             if (virementOff) {
+                ajouterTransaction(new Transaction("Retrait", montant, new Date(), "Retrait d'argent"));
                 System.out.println(getClass().getSimpleName() + " : Retrait de " + montant + " effectué. Nouveau solde : " + solde);
             }
         } else {
@@ -41,8 +41,8 @@ public abstract class Compte {
 
     public void credit(double montant) {
         solde += montant;
-        ajouterTransaction(new Transaction("Crédit", montant, new Date(), "Crédit d'argent"));
         if (virementOff) {
+            ajouterTransaction(new Transaction("Crédit", montant, new Date(), "Crédit d'argent"));
             System.out.println(getClass().getSimpleName() + " : Crédit de " + montant + " effectué. Nouveau solde : " + solde);
         }
     }

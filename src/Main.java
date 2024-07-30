@@ -13,6 +13,7 @@ public class Main {
         compteEpargne.virement(compteCourant,100);
         compteCourant.retirer(1500);
         compteCourant.virement(compteEpargne,1200);
-        List<Transaction> historique = compteCourant.getHistorique();
+        System.out.println(compteCourant.getHistorique());
+        System.out.println(compteEpargne.getHistorique());
     }
 }
